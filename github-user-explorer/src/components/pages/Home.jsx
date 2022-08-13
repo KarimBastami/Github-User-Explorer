@@ -1,11 +1,12 @@
-import Navbar from "./Navbar"
+import Navbar from "../layout/Navbar"
 import Footer from "./Footer"
+import Showcase from "../content/Showcase"
 
 function Home() {
   return (
     <div className="flex flex-col justify-between h-screen">
       <Navbar />  
-      <div>Content</div>
+      <Showcase />
       <Footer />
     </div>
   )

@@ -17,7 +17,7 @@ function Footer() {
            target="_blank" 
            className="btn btn-ghost btn-md">
             
-          <FaLinkedinIn className="text-3xl"/>
+          <FaLinkedinIn className="text-2xl"/>
         </a>
       </div>
     </footer>
