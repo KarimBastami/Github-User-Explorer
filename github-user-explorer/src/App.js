@@ -1,9 +1,12 @@
+import Home from "./components/Home";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="App bg-purple-800">
-      <h1 className="text-xl">Test</h1>
-    </div>
+    <Routes>
+      <Route exact path="/" element={<Home />}/>
+    </Routes>
   );
 }
 
