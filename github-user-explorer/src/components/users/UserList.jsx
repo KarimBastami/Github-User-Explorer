@@ -1,4 +1,6 @@
 import Spinner from "../layout/Spinner"
+import UserCell from "./UserCell"
+
 import { useEffect, useState } from "react"
 
 function UserList() {
@@ -31,7 +33,8 @@ function UserList() {
     return (
       <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-8">
         {users.map((user) => {
-          return <h2 key={user.id}>{user.login}</h2>
+          return <UserCell key={user.id} 
+                           _user={user}/>
         })}
       </div>
     )
