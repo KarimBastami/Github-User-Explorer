@@ -1,8 +1,9 @@
+import UserList from "../users/UserList"
 
 function Showcase() {
   return (
     <div>
-      Showcase
+      <UserList />
     </div>
   )
 }
