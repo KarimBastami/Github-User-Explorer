@@ -6,10 +6,12 @@ const githubApi = "https://api.github.com"
 export const GithubProvider = ({ children }) => {
 
   const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
 
   const getAllUsers = async () => {
+    setLoading(true)
+
     const response = await fetch(`${githubApi}/users`,
     {
       headers: {
@@ -29,7 +31,6 @@ export const GithubProvider = ({ children }) => {
   return <GithubContext.Provider value={{
             users,
             loading,
-            getAllUsers,
           }}> { children }
         </GithubContext.Provider>
 }

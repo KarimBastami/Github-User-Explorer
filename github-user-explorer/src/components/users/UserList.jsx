@@ -2,16 +2,11 @@ import Spinner from "../layout/Spinner"
 import UserCell from "./UserCell"
 import GithubContext from "../context/github/GithubContext"
 
-import { useEffect, useContext } from "react"
+import { useContext } from "react"
 
 function UserList() {
 
-  const { users, loading, getAllUsers } = useContext(GithubContext)
-
-  useEffect(() => {
-    getAllUsers() 
-
-  }, [])
+  const { users, loading } = useContext(GithubContext)
 
 
   if (!loading) {
