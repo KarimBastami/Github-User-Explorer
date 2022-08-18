@@ -1,9 +1,13 @@
+import GithubContext from "../context/github/GithubContext"
+
 import { GoSearch } from "react-icons/go"
-import { useState } from "react"
+import { useState, useContext } from "react"
+
 
 function UserSearch() {
 
   const [query, setQuery] = useState("") 
+  const { users, getUser } = useContext(GithubContext)
 
   const handleInputChange = e => setQuery(e.target.value)
   const handleClear = e => setQuery("")
@@ -16,9 +20,10 @@ function UserSearch() {
     }
     else {
       // Call API
+      getUser(query)
     }
   }
-  
+
 
   return (
     <div className="grid grid-cols-1 md:grid-col-2 gap-8 mb-8">
@@ -35,9 +40,11 @@ function UserSearch() {
           </button>
         </div>
       </form>
-      <div>
-        <button onClick={handleClear} className="btn btn-ghost btn-lg">Clear</button>
-      </div>
+      {users.length !== 0 &&
+        <div>
+          <button onClick={handleClear} className="btn btn-ghost btn-lg">Clear</button>
+        </div>
+      }
     </div>
   )
 }

@@ -3,7 +3,7 @@ import UserSearch from "../users/UserSearch"
 
 function Showcase() {
   return (
-    <div>
+    <div className="lg:p-8">
       <UserSearch />
       <UserList />
     </div>
