@@ -1,38 +1,23 @@
 import Spinner from "../layout/Spinner"
 import UserCell from "./UserCell"
+import GithubContext from "../context/github/GithubContext"
 
-import { useEffect, useState } from "react"
+import { useEffect, useContext } from "react"
 
 function UserList() {
 
-  const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  const githubApiUsers = "https://api.github.com/users"
-
-  const getAllUsers = async () => {
-    const response = await fetch(githubApiUsers,
-    {
-      headers: {
-        "Content-Type": "application/json" 
-      }
-    })
-  
-    const usersData = await response.json();
-    
-    setUsers(usersData)
-    setLoading(false)
-  }
-
+  const { users, loading, getAllUsers } = useContext(GithubContext)
 
   useEffect(() => {
     getAllUsers() 
+
   }, [])
+
 
   if (!loading) {
     return (
-      <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-8">
-        {users.map((user) => {
+      <div className="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-y-8 gap-x-3">
+        {users.length !== 0 && users.map((user) => {
           return <UserCell key={user.id} 
                            _user={user}/>
         })}
