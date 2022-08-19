@@ -8,7 +8,7 @@ function UserCell({ _user: { login, avatar_url }  }) {
       <div className="card-body flex-row justify-between xs:flex-col">
         <h2 className="card-title text-base">{login}</h2>
         <div className="card-actions">
-          <Link className="btn btn-sm btn-accent" to={`/users/${login}`}> Visit Profile </Link>
+          <Link className="btn btn-sm btn-accent" to={`/user/${login}`}> Visit Profile </Link>
         </div>
       </div>
     </div>

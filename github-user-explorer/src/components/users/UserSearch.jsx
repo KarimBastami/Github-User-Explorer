@@ -3,6 +3,7 @@ import AlertContext from "../context/alert/AlertContext"
 import Alert from "../layout/Alert"
 
 import { GoSearch } from "react-icons/go"
+import { RiDeleteBin6Line } from "react-icons/ri"
 import { useState, useContext } from "react"
 
 
@@ -35,7 +36,7 @@ function UserSearch() {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-col-2 gap-8 mb-8 md:justify-items-start justify-items-center">
+    <div className="grid grid-cols-1 justify-items-center gap-8 mb-8 md:justify-items-start">
       <form onSubmit={handleSubmit} className="form-control">
         <Alert />
         <div className="input-group">
@@ -50,9 +51,12 @@ function UserSearch() {
           </button>
         </div>
       </form>
+
       {users.length !== 0 &&
         <div>
-          <button onClick={handleClear} className="btn btn-ghost btn-lg">Clear</button>
+          <button onClick={handleClear} className="btn btn-outline btn-md"> 
+            <RiDeleteBin6Line className="text-2xl mr-3"/> Clear
+          </button>
         </div>
       }
     </div>

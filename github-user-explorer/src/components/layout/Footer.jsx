@@ -13,7 +13,7 @@ function Footer() {
         </div>
 
         <a href="https://linkedin.com/in/karim-bastami" 
-           rel="noopener" 
+           rel="noreferrer" 
            target="_blank" 
            className="btn btn-ghost btn-md">
             
