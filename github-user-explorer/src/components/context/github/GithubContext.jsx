@@ -8,6 +8,7 @@ export const GithubProvider = ({ children }) => {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(false)
 
+  const clearUsers = () => setUsers([]) 
 
   const getUser = async (query) => {
     setLoading(true)
@@ -28,10 +29,12 @@ export const GithubProvider = ({ children }) => {
   }
 
 
+
   return <GithubContext.Provider value={{
             users,
             loading,
             getUser,
+            clearUsers,
           }}> { children }
         </GithubContext.Provider>
 }
