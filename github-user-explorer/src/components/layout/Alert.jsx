@@ -10,7 +10,7 @@ function Alert() {
   return alert !== null && (
     <div>
       {alert.type === "error" && 
-        <div className="flex flex-row space-x-2 mb-2 items-center">
+        <div className="flex flex-row space-x-2 mb-3 items-center">
           <BiErrorAlt className="text-3xl text-error"/>
           <div className="font-bold text-white">{alert.msg}</div>
         </div>

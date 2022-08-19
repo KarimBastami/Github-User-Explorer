@@ -35,7 +35,7 @@ function UserSearch() {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-col-2 gap-8 mb-8">
+    <div className="grid grid-cols-1 md:grid-col-2 gap-8 mb-8 md:justify-items-start justify-items-center">
       <form onSubmit={handleSubmit} className="form-control">
         <Alert />
         <div className="input-group">
