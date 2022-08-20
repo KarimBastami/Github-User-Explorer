@@ -37,7 +37,7 @@ function UserProfile() {
 
   if (!loading) {
     return (
-      <div className="text-slate-200 w-full mx-auto xl:w-9/12 lg:w-10/12">
+      <div className="text-slate-200 px-3 w-full mx-auto xl:w-9/12 lg:w-10/12">
         <Link to="/" className="btn btn-ghost mb-4">
          <IoArrowBackCircleOutline className="mr-3 text-3xl"/> Back To Home
         </Link>
@@ -56,21 +56,23 @@ function UserProfile() {
           </div>
 
           <div className="col-span-2">
-            <div className="mb-6 space-y-2">
-              <div className="flex flex-row items-center">
-                <h1 className="card-title text-3xl mr-3">{name}</h1>
+            <div className="mb-6 space-y-4 md:space-y-2">
+              <div className="flex flex-col md:flex-row items-center">
+                <h1 className="card-title text-center text-3xl mr-3 mb-2 md:mb-1 mb:text-start">{name}</h1>
                 {hireable ? <div className="badge badge-info mt-2">Hireable</div> : 
                             <div className="badge badge-error mt-2">Not Hireable</div>
                 }
               </div>
-              {bio ? <p className="text-gray-300">{bio}</p> : <p className="text-gray-300">(NO BIO)</p>}
-              <div className="card-actions">
+              {bio ? <p className="text-gray-300 text-center md:text-start">{bio}</p> : <p className="text-gray-300 text-center md:text-start">(NO BIO)</p>
+              }
+
+              <div className="card-actions justify-center md:justify-start">
                 <a href={html_url} className="btn btn-outline mt-4" target="_blank" rel="noreferrer"> 
                 Visit Github Profile</a>
               </div>
             </div>
 
-            <div className="stats w-full shadow-lg text-slate-200">
+            <div className="stats stats-vertical md:stats-horizontal w-full shadow-lg text-slate-200">
               <div className="stat">
                 <div className="stat-title">Location</div>
                 {location ? <div className="stat-value text-lg">{location}</div> :
@@ -99,7 +101,7 @@ function UserProfile() {
           </div>
         </div>
 
-        <div className="w-full py-6 mb-6 rounded-lg shadow-lg bg-base-100 stats text-slate-200">
+        <div className="w-full py-6 mb-6 rounded-lg shadow-lg bg-base-100 stats text-slate-200 stats-vertical md:stats-horizontal">
           <div className="stat">
             <div className="stat-figure text-accent">
               <FaUsers className="text-3xl md:text-5xl"/>        
@@ -125,9 +127,9 @@ function UserProfile() {
           </div>
         </div>
 
-        <div className="card rounded-lg shadow-lg">
+        <div className="card rounded-lg shadow-lg pt-6">
           <div className="card-body">
-            <h2 className="card-title mb-4 text-2xl">Latest 10 Repositories</h2>
+            <h2 className="card-title mb-4 text-2xl mx-auto md:ml-0">Latest 10 Repositories</h2>
             <ul>
               {userRepos.length !== 0 
                 ? 
