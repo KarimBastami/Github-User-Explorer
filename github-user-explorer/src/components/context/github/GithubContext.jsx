@@ -43,7 +43,6 @@ export const GithubProvider = ({ children }) => {
     
     if (response.ok) {
       const userData = await response.json(); 
-      console.log(userData)
       setUser(userData)
     } 
     else {
