@@ -8,6 +8,7 @@ export const GithubProvider = ({ children }) => {
 
   const [users, setUsers] = useState([])
   const [user, setUser] = useState({})
+  const [userRepos, setUserRepos] = useState([])
   const [loading, setLoading] = useState(false)
 
   const clearUsers = () => setUsers([]) 
@@ -23,7 +24,7 @@ export const GithubProvider = ({ children }) => {
     })
     
     if (response.ok) {
-      const { items } = await response.json(); 
+      const { items } = await response.json()
       Array.isArray(items) ? setUsers(items) : setUsers([items])
     }
 
@@ -53,14 +54,34 @@ export const GithubProvider = ({ children }) => {
   }
 
 
+  const getUserRepos = async (loginId) => {
+    setLoading(true)
+
+    const response = await fetch(`${githubApi}/users/${loginId}/repos`,
+    {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+
+    if (response.ok) {
+      const repos = await response.json()
+      Array.isArray(repos) ? setUserRepos(repos) : setUserRepos([repos])
+    }
+
+    setLoading(false)
+  }
+
 
   return <GithubContext.Provider value={{
             users,
             user,
             loading,
+            userRepos,
             getUser,
             clearUsers,
             getOneUser,
+            getUserRepos,
           }}> { children }
         </GithubContext.Provider>
 }
