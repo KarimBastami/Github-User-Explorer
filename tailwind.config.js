@@ -5,7 +5,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
       "./src/**/*.{js,jsx,ts,tsx}",
-    ], 
+    ],
+  
   theme: {
     extend: {},
     screens: {
@@ -13,6 +14,12 @@ module.exports = {
       ...defaultTheme.screens
     }
   },
+
   plugins: [require("daisyui")],
+
+  daisyui: {
+    themes: ["dark"],
+    darkTheme: "dark",
+  },
 }
  
