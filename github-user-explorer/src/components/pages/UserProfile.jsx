@@ -11,6 +11,7 @@ import { useParams, Link } from "react-router-dom"
 function UserProfile() {
 
   const params = useParams()
+
   const { getOneUser, user, loading, getUserRepos, userRepos } = useContext(GithubContext)
 
   const {
@@ -28,6 +29,10 @@ function UserProfile() {
     hireable
   } = user
 
+  let blogUrl = ""
+  if (blog) {
+    blogUrl = blog.includes("http") ? blog : `https://${blog}` 
+  }
 
   useEffect(() => {
     getOneUser(params.id)
@@ -82,12 +87,12 @@ function UserProfile() {
 
               <div className="stat">
                 <div className="stat-title">Website</div>
-                {blog ? <a href={`https://${blog}`} 
-                                target="_blank" 
-                                rel="noreferrer" 
-                                className="stat-value text-lg">{blog}
-                            </a> :
-                            <div className="stat-value text-lg">(No website)</div>
+                {blog ? <a href={blogUrl}
+                           target="_blank" 
+                           rel="noreferrer" 
+                           className="stat-value text-lg">{blog}
+                        </a> :
+                        <div className="stat-value text-lg">(No website)</div>
                 }
               </div>
 
