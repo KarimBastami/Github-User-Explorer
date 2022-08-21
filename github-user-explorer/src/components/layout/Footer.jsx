@@ -10,7 +10,7 @@ function Footer() {
         <div className="items-center flex flex-col">
           <FaSlackHash className="text-4xl"/>
           <p className="text-lg text-center">Check the project source code "ironically" on</p>
-          <a href="#" 
+          <a href="https://github.com/KarimBastami/Github-User-Explorer" 
              rel="noreferrer" 
              target="_blank"
              className="text-lg ml-1 text-accent hover:text-accent-focus    cursor-pointer">
