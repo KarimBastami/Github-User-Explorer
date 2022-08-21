@@ -134,11 +134,11 @@ function UserProfile() {
 
         <div className="card rounded-lg shadow-lg pt-6">
           <div className="card-body">
-            <h2 className="card-title mb-4 text-2xl mx-auto md:ml-0">Latest 10 Repositories</h2>
+            <h2 className="card-title mb-4 text-2xl mx-auto md:ml-0">Latest 5 Repositories</h2>
             <ul>
               {userRepos.length !== 0 
                 ? 
-                userRepos.map((repo, i) => i < 10 && (<li key={repo.id}><RepoCell _repo={repo} /></li>))
+                userRepos.map((repo, i) => i < 5 && (<li key={repo.id}><RepoCell _repo={repo} /></li>))
                 :
                 <p className="">(No repositories found)</p>
               }     
