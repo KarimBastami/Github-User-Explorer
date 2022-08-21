@@ -18,7 +18,7 @@ steps for profile selection and viewing repositories, this application is a simp
   - Names and redirection links to the latest 5 repositories that include badges for:
   
     - Number of watchers
-    - Number of stars
+    - Number of star gazers
     - Number of forks
     - Number of open issue requests
    
@@ -39,7 +39,6 @@ npm start
 - Reactjs
 - React-Router-Dom
 - GitHub Rest API
-- JavaScript
 - HTML/CSS
 - Tailwind-CSS
 - DaisyUI
