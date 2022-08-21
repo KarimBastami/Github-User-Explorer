@@ -3,7 +3,7 @@ This is a user finder app that utilizes React and the GitHub Restful API to effi
 steps for profile selection and viewing repositories, this application is a simple solution to address this inconvenience.
 
 ## Try It Without Downloading
-[github-user-explorer.vercel.app](github-user-explorer.vercel.app)
+[github-user-explorer.vercel.app](https://github-user-explorer.vercel.app)
 
 ## Main Features
 - Responsive home page with a search bar
