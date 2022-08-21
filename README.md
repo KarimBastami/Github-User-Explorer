@@ -1,5 +1,5 @@
 # Github-User-Explorer
-This is a user finder app that uses React and the Github Restful API to efficiently search and display relevant information for a Github user's profile. Github's native search requires multiple
+This is a user finder app that utilizes React and the GitHub Restful API to efficiently search and display relevant information for a GitHub user's profile. GitHub's native search requires multiple
 steps for profile selection and viewing repositories, this application is a simple solution to address this inconvenience.
 
 ## Main Features
@@ -38,7 +38,7 @@ npm start
 ## Dependencies & Technologies Used
 - Reactjs
 - React-Router-Dom
-- Github Rest API
+- GitHub Rest API
 - HTML/CSS
 - Tailwind-CSS
 - DaisyUI
